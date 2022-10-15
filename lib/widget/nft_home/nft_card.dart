@@ -52,12 +52,16 @@ class NftCard extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(data.title,
-                                style: GoogleFonts.roboto(
-                                    textStyle: Theme.of(context)
-                                        .textTheme
-                                        .headline5
-                                        ?.copyWith(color: Colors.white))),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width / 3.7,
+                              child: Text(data.title,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: GoogleFonts.roboto(
+                                      textStyle: Theme.of(context)
+                                          .textTheme
+                                          .headline5
+                                          ?.copyWith(color: Colors.white))),
+                            ),
                             Row(
                               children: [
                                 const Icon(
@@ -75,7 +79,9 @@ class NftCard extends StatelessWidget {
                             )
                           ],
                         ),
-                        ElevatedButton(
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width / 3.7,
+                            child: ElevatedButton(
                             onPressed: () {},
                             child: Text(
                               "${data.descrip}\n${data.buy}",
@@ -85,7 +91,7 @@ class NftCard extends StatelessWidget {
                                       .textTheme
                                       .bodySmall
                                       ?.copyWith(color: Colors.black,fontWeight: FontWeight.bold)),
-                            ))
+                            )))
                       ],
                     ),
                   ),

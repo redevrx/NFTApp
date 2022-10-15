@@ -20,15 +20,17 @@ class NftScreen extends StatelessWidget {
                   begin: Alignment.centerLeft,
                   end: Alignment.topRight,
                   colors: [
-                Colors.black.withOpacity(.95),
-                Colors.black.withOpacity(.8)
-              ])),
+                    Colors.black.withOpacity(.95),
+                    Colors.black.withOpacity(.8)
+                  ])),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                SizedBox(
-                  height: MediaQuery.of(context).padding.top,
+                const SizedBox(
+                  height: kDefaultPadding,
                 ),
                 /**
                  * stack page index
@@ -36,6 +38,7 @@ class NftScreen extends StatelessWidget {
                 Consumer<BottomBarProvider>(
                   builder: (BuildContext context, value, Widget? child) {
                     return IndexedStack(
+                      sizing: StackFit.expand,
                       index: value.index != 0 && value.index != 1
                           ? 0
                           : value.index,
@@ -43,8 +46,8 @@ class NftScreen extends StatelessWidget {
                         const HomeScreen(),
                         SearchScreen(
                           onTab: (index) => Provider.of<BottomBarProvider>(
-                                  context,
-                                  listen: false)
+                              context,
+                              listen: false)
                               .onNavigate(index),
                         ),
                       ],
@@ -56,24 +59,19 @@ class NftScreen extends StatelessWidget {
                  */
                 Consumer<BottomBarProvider>(
                   builder: (BuildContext context, value, Widget? child) {
-                    return Align(
-                      alignment: Alignment.bottomCenter,
-                      child: NftBottomBar(
-                        index: value.index,
-                        onTab: (index) => Provider.of<BottomBarProvider>(
-                                context,
-                                listen: false)
-                            .onNavigate(index),
-                      ),
+                    return NftBottomBar(
+                      index: value.index,
+                      onTab: (index) => Provider.of<BottomBarProvider>(
+                          context,
+                          listen: false)
+                          .onNavigate(index),
                     );
                   },
-                  child: const SizedBox(),
-                )
+                ),
               ],
             ),
           ),
         ),
-        // bottomNavigationBar: const NftBottomBar(),
       ),
     );
   }

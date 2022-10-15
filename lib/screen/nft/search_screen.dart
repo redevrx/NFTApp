@@ -91,7 +91,6 @@ class SearchScreen extends StatelessWidget {
           child: ListView.builder(
             itemCount: nftList.length,
             physics: const BouncingScrollPhysics(),
-            shrinkWrap: true,
             itemBuilder: (BuildContext context, int index) {
               return SearchCard(data: nftList[index], index: index,);
             },

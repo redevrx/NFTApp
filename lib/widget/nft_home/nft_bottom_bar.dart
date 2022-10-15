@@ -11,11 +11,11 @@ class NftBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: const BorderRadius.only(topLeft: Radius.circular(kDefaultPadding),topRight: Radius.circular(kDefaultPadding)),
+      borderRadius: const BorderRadius.only(topRight: Radius.circular(kDefaultPadding),topLeft: Radius.circular(kDefaultPadding)),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 60.0, sigmaY: 60.0),
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           height: kHeight * 1.8,
           width: MediaQuery.of(context).size.width * 1,
           color: Colors.transparent,
@@ -68,7 +68,7 @@ class NftBottomBar extends StatelessWidget {
                  ],
                ),
              ),
-            GestureDetector(
+              GestureDetector(
               onTap: () => onTab(2),
               child:   Column(
                 mainAxisAlignment: MainAxisAlignment.center,

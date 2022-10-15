@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         const NftAppbar(),
         const SizedBox(height: kDefaultPadding),
@@ -25,11 +26,10 @@ class HomeScreen extends StatelessWidget {
          * nft card
          */
         SizedBox(
-          height: MediaQuery.of(context).size.height * .7,
+          height: MediaQuery.of(context).size.height / 1.4,
           width: double.maxFinite,
           child: ListView.builder(
             physics: const BouncingScrollPhysics(),
-            shrinkWrap: true,
             itemCount: nftList.length,
             itemBuilder: (BuildContext context, int index) {
               return NftCard(data: nftList[index]);
