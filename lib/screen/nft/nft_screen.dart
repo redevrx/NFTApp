@@ -6,14 +6,21 @@ import 'package:provider/provider.dart';
 import '../../widget/nft_home/nft_bottom_bar.dart';
 import 'home_screen.dart';
 
-class NftScreen extends StatelessWidget {
-  const NftScreen({Key? key}) : super(key: key);
+class NftScreen extends StatefulWidget {
+  const NftScreen({super.key});
+
+  @override
+  State<NftScreen> createState() => _NftScreenState();
+}
+
+class _NftScreenState extends State<NftScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       top: false,
       bottom: false,
       child: Scaffold(
+        key: UniqueKey(),
         body: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(

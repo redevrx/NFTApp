@@ -22,14 +22,11 @@ class NftCard extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_)=> NftDetailScreen(nft: data))),
-            child: Hero(
-              tag: data.hashCode,
-              child: ParalaxContainer(
-                type: ParalaxType.NETWORK,
-                imageUrl:
-                data.image,
-                aspectRatio: 4 / 3,
-              ),
+            child: ParalaxContainer(
+              type: ParalaxType.NETWORK,
+              imageUrl:
+              data.image,
+              aspectRatio: 4 / 3,
             ),
           ),
           Positioned(

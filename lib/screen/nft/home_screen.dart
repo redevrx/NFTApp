@@ -29,6 +29,7 @@ class HomeScreen extends StatelessWidget {
           height: MediaQuery.of(context).size.height / 1.4,
           width: double.maxFinite,
           child: ListView.builder(
+            key: UniqueKey(),
             physics: const BouncingScrollPhysics(),
             itemCount: nftList.length,
             itemBuilder: (BuildContext context, int index) {
