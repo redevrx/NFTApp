@@ -38,7 +38,6 @@ class NftScreen extends StatelessWidget {
                 Consumer<BottomBarProvider>(
                   builder: (BuildContext context, value, Widget? child) {
                     return IndexedStack(
-                      sizing: StackFit.expand,
                       index: value.index != 0 && value.index != 1
                           ? 0
                           : value.index,
@@ -54,6 +53,7 @@ class NftScreen extends StatelessWidget {
                     );
                   },
                 ),
+
                 /**
                  * bottom navigation bar
                  */

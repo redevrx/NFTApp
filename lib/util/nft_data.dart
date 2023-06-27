@@ -31,5 +31,5 @@ final nftList = [
       title: "Bugs Bunny",
       subTitle: "Mo shi",
       icon: Icons.monetization_on,
-      image: "https://i1.wp.com/www.game-monster.com/wp-content/uploads/2021/07/space-jam-nft-coleccion-a-new-legacy-1.jpg?resize=600%2C763&ssl=1"),
+      image: "https://i.ytimg.com/vi/l-DrHQGAXjw/maxresdefault.jpg"),
 ];

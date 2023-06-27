@@ -15,6 +15,7 @@ class NftBottomBar extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 60.0, sigmaY: 60.0),
         child: Container(
+          margin: const EdgeInsets.only(bottom: 12.0),
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           height: kHeight * 1.8,
           width: MediaQuery.of(context).size.width * 1,
